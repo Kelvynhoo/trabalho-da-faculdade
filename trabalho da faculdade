@@ -1,0 +1,561 @@
+QUESTÃO 1 de 4 - Conteúdo até Aula 03
+Enunciado: Imagina-se que você é um dos programadores responsáveis pela construção de app para uma empresa X que vende Planos de Saúde. Uma das estratégias dessa empresa X é cobrar um valor diferente com base na idade do cliente, conforme a listagem abaixo:
+
+	Se a idade for maior ou igual que 0 e menor que 19, o valor será de 100% do valor base do plano (100 / 100);
+	Se a idade for maior ou igual que 19 e menor que 29, o valor será de 150% do valor base do plano (150 / 100);
+	Se a idade for maior ou igual que 29 e menor que 39, o valor será de 225% do valor base do plano (225 / 100);
+	Se a idade for maior ou igual que 39 e menor que 49, o valor será de 240% do valor base do plano (240 / 100);
+	Se a idade for maior ou igual que 49 e menor que 59, o valor será de 350% do valor base do plano (350 / 100);
+	Se a idade for maior ou igual que 59, o valor será de 600% do valor base do plano (600 / 100);
+
+O valor mensal do plano é calculado da seguinte maneira:
+
+valorMensal=valorBase*porcentagem
+
+Exemplo: Se o valorBase informado for 100.00 e a idade for 45 anos (240% segundo a tabela acima)
+
+valorMensal=100.00*(240/100)=R$ 240.00
+
+Elabore um programa em Python que:
+	Deve-se implementar o print com o seu nome completo (somente print, não usar input aqui). 
+Por exemplo: print(“Sistema desenvolvido por Bruno Kostiuk”) [EXIGÊNCIA DE CÓDIGO 1 de 6];
+	Deve-se implementar o input do valorBase do plano e da idade do cliente [EXIGÊNCIA DE CÓDIGO 2 de 6];
+	Deve-se implementar as regras de valores conforme a enunciado acima (obs.: atente-se as condições de menor, igual e maior) [EXIGÊNCIA DE CÓDIGO 3 de 6];
+	Deve-se implementar o valorMensal [EXIGÊNCIA DE CÓDIGO 4 de 6];
+	Deve-se implementar as estruturas if, elif e else (todas elas) [EXIGÊNCIA DE CÓDIGO 5 de 6];  
+	Deve-se inserir comentários relevantes no código [EXIGÊNCIA DE CÓDIGO 6 de 6];
+	Deve-se apresentar na saída de console uma mensagem com seu nome completo [EXIGÊNCIA DE SAÍDA DE CONSOLE 1 de 2];
+	Deve-se apresentar na saída de console a utilização do sistema informando uma idade maior ou igual a 29 anos, apresentando na saída de console o valorMensal do plano [EXIGÊNCIA DE SAÍDA DE CONSOLE 2 de 2];  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Apresentação de Código da Questão 1:
+print('kelvyn william')
+
+# Requerimento da idade, 
+# se a idade for menor que 0 ou maior que 100 tentar novamente.
+while True:
+    idade = int(input('Informe sua idade por favor: '))
+    if idade < 0 or idade > 100:  
+        print('Idade inexistente, tente novamente.')
+    else:
+        break
+
+# idade correta,Continua com o programa
+valor_base = float(input('Informe o valor do plano: '))
+
+# Porcentagem cobrada de acordo com a idade do cliente
+if idade >= 0 and idade < 19:
+    porcentagem = 100 
+elif idade >= 19 and idade < 29:
+    porcentagem = 150 
+elif idade >= 29 and idade < 39:
+    porcentagem = 225 
+elif idade >= 39 and idade < 49:
+    porcentagem = 240 
+elif idade >= 49 and idade < 59:
+    porcentagem = 350 
+elif idade >= 59:
+    porcentagem = 600 
+else:
+    porcentagem = 0
+#calculo do valor da mensalidade
+valor_mensal = valor_base * porcentagem / 100
+print(f'O valor base do plano é de:{valor_base} R$')
+print(f'O valor mensal do plano é de:{valor_mensal} R$')
+
+
+Apresentação de Saída do Console da Questão 1:
+
+kelvyn william
+Informe sua idade por favor: 30
+Informe o valor do plano: 100
+O valor base do plano é de:100.0 R$
+O valor mensal do plano é de:225.0 R$
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+QUESTÃO 2 de 4 - Conteúdo até aula 04
+Enunciado: Você e sua equipe de programadores foram contratados para desenvolver um app de vendas para uma Pizzaria que vende sabores de Pizzas Doces e Pizzas Salgadas. Você ficou com a parte de desenvolver a interface do cliente para retirada do produto.
+
+A Loja possui seguinte relação:
+•	Tamanho P: Pizza Salgada (PS) custa 30 reais e a Pizza Doce (PD) custa 34 reais;
+•	Tamanho M: Pizza Salgada (PS) custa 45 reais e a Pizza Doce (PD) custa 48 reais;
+•	Tamanho G: Pizza Salgada (PS) custa 60 reais e a Pizza Doce (PD) custa 66 reais;
+
+Elabore um programa em Python que: 
+A.	Deve-se implementar o print com o seu nome completo (somente print, não usar input aqui). 
+Por exemplo: print(“Bem-vindos a Pizzaria do Bruno Kostiuk”) 
+Além do seu nome completo, deve-se implementar um print com um Menu para o cliente. [EXIGÊNCIA DE CÓDIGO 1 de 8];
+B.	Deve-se implementar o input do sabor (PS/PD) e o print “Sabor inválido. Tente novamente" se o usuário entra com valor diferente de PS e PD [EXIGÊNCIA DE CÓDIGO 2 de 8];
+C.	Deve-se implementar o input do tamanho (P/M/G) e o print “Tamanho inválido. Tente novamente" se o usuário com entra valor diferente de P, M ou G [EXIGÊNCIA DE CÓDIGO 3 de 8];
+D.	Deve-se implementar if, elif e/ou else, utilizando o modelo aninhado (aula 3 – Tema 4) com cada uma das combinações de sabor e tamanho [EXIGÊNCIA DE CÓDIGO 4 de 8];
+E.	Deve-se implementar um acumulador para somar os valores dos pedidos (valor total do pedido) [EXIGÊNCIA DE CÓDIGO 5 de 8];
+F.	Deve-se implementar o input com a pergunta: “Deseja pedir mais alguma coisa?”. Se sim repetir a partir do item B, senão encerrar o programa executar o print do acumulador [EXIGÊNCIA DE CÓDIGO 6 de 8];
+G.	Deve-se implementar as estruturas de while, break, continue (todas elas) [EXIGÊNCIA DE CÓDIGO 7 de 8];
+H.	Deve-se inserir comentários relevantes no código [EXIGÊNCIA DE CÓDIGO 8 de 8];
+I.	Deve-se apresentar na saída de console uma mensagem com o seu nome completo e o menu para o cliente conhecer as opções  [EXIGÊNCIA DE SAÍDA DE CONSOLE 1 de 4];
+J.	Deve-se apresentar na saída de console um pedido em que o usuário errou o sabor [EXIGÊNCIA DE SAÍDA DE CONSOLE 2 de 4]; 
+K.	Deve-se apresentar na saída de console um pedido em que o usuário errou o tamanho [EXIGÊNCIA DE SAÍDA DE CONSOLE 3 de 4];
+L.	Deve-se apresentar na saída de console um pedido com duas opções sabores diferentes e com tamanhos diferentes [EXIGÊNCIA DE SAÍDA DE CONSOLE 4 de 4];  
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Apresentação de Código da Questão 2:
+print('kelvyn william')
+# Menu de escolha do cliente
+print('-' * 13, 'Pizzaria', '-' * 17)
+print('| Tamanho | pizza salgada | pizza doce |')
+print('-' * 40)
+print(' ' * 4, 'P', '' , ' ' * 7, 'R$ 30', ' ' * 7, 'R$ 34')
+print(' ' * 4, 'M', '' , ' ' * 7, 'R$ 45', ' ' * 7, 'R$ 48')
+print(' ' * 4, 'G', '' , ' ' * 7, 'R$ 60', ' ' * 7, 'R$ 66')
+print('-' * 40)
+
+# Verificando a escolha do cliente esta correta
+def escolha():
+    while True:
+        sabor = input('Qual sabor você deseja pizza: salgada ou doce? ')
+        if sabor in ('salgada', 'doce'):
+            return sabor
+        else:
+            print('Sabor inválido. Tente novamente')
+
+# Verificando o tamanho da pizza esta correto
+def escolher_tamanho():
+    while True:
+        tamanho = input('Escolha o tamanho? p,m,g: ')
+        if tamanho in ('p', 'm', 'g'):
+            return tamanho
+        else:
+            print('Tamanho inválido. Tente novamente')
+
+valor_total = 0  # Inicializa o valor total
+
+while True:
+    sabor = escolha()
+    tamanho = escolher_tamanho()
+
+    if sabor == 'salgada':
+        if tamanho == 'p':
+            valor = 30
+        elif tamanho == 'm':
+            valor = 45
+        elif tamanho == 'g':
+            valor = 60
+    else:
+        if tamanho == 'p':
+            valor = 34
+        elif tamanho == 'm':
+            valor = 48
+        elif tamanho == 'g':
+            valor = 66
+
+    # Informa o cliente a escolha que ele fez
+    print(f'Você escolheu a pizza {sabor} de tamanho {tamanho} e o valor é {valor} R$')
+    qtd = int(input('Qual a quantidade que você deseja? '))
+    valor_total += valor * qtd  # Acumula o valor total
+
+    pergunta_final = input('Deseja pedir mais alguma coisa? (s/n): ')
+    if pergunta_final.lower() != 's':  # Se a resposta não for 's', sai do loop
+        break
+
+print(f'O total a pagar é {valor_total} R$')
+
+
+Apresentação de Saída do Console da Questão 2:
+
+kelvyn william
+------------- Pizzaria -----------------
+| Tamanho | pizza salgada | pizza doce |
+----------------------------------------
+     P          R$ 30         R$ 34
+     M          R$ 45         R$ 48
+     G          R$ 60         R$ 66
+----------------------------------------
+Qual sabor você deseja pizza: salgada ou doce? azedo
+Sabor inválido. Tente novamente
+Qual sabor você deseja pizza: salgada ou doce? salgada
+Escolha o tamanho? p,m,g: f
+Tamanho inválido. Tente novamente
+Escolha o tamanho? p,m,g: p
+Você escolheu a pizza salgada de tamanho p e o valor é 30 R$
+Qual a quantidade que você deseja? 2
+Deseja pedir mais alguma coisa? (s/n): s
+Qual sabor você deseja pizza: salgada ou doce? doce
+Escolha o tamanho? p,m,g: m
+Você escolheu a pizza doce de tamanho m e o valor é 48 R$
+Qual a quantidade que você deseja? 3
+Deseja pedir mais alguma coisa? (s/n): n
+O total a pagar é 204 R$
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+QUESTÃO 3 de 4 - Conteúdo até aula 05
+Enunciado: Você foi contratado para desenvolver um sistema de Venda de uma Empresa Y que vende toras de arvore para outras empresas que vendem madeira. Você ficou com a parte de desenvolver a interface com o cliente.
+A Empresa Y opera as vendas da seguinte maneira:
+
+•	Tora de Pinho (PIN), o valor do metro cúbico (m³) é de cento e cinquenta reais e quarenta centavos;
+•	Tora de Peroba (PER), o valor do metro cúbico (m³) é de cento e setenta reais e vinte centavos;
+•	Tora de Mogno (MOG), o valor do metro cúbico (m³) é de cento e noventa reais e noventa centavos;
+•	Tora de Ipê (IPE), o valor do metro cúbico (m³) é de duzentos e dez reais e dez centavos; 
+•	Tora de Imbuia (IMB), o valor do metro cúbico (m³) é de duzentos e vinte reais e setenta centavos;
+
+•	Se a quantidade (em m³) de toras for menor que 100 não há desconto na venda (0/100);
+•	Se a quantidade (em m³) de toras for igual ou maior que 100 e menor que 500, o desconto será de 4% (4/100);
+•	Se a quantidade (em m³) de toras for igual ou maior que 500 e menor que 1000, o desconto será de 9% (9/100);
+•	Se a quantidade (em m³) de toras for igual ou maior que 1000 e menor ou igual que 2000, o desconto será de 16% (16/100);
+•	Se a quantidade (em m³) de toras for maior que 2000, não é aceito pedidos com essa quantidade de toras;
+	
+♦	Para o adicional de transporte rodoviário (1) é cobrado um valor extra de 1000 reais;
+♦	Para o adicional de transporte ferroviário (2) é cobrado um valor extra de 2000 reais;
+♦	Para o adicional de transporte hidroviário (3) é cobrado um valor extra de 2500 reais;
+
+O valor final da conta é calculado da seguinte maneira:
+
+total = ((tipoMadeira * qtdToras)*(1-desconto)) + transporte
+
+Elabore um programa em Python que: 
+A.	Deve-se implementar o print com o seu nome completo (somente print, não usar input aqui). 
+Por exemplo: print(“Bem-vindos a Madeireira do Lenhador Bruno Kostiuk”)  [EXIGÊNCIA DE CÓDIGO 1 de 7];
+B.	Deve-se implementar a função escolha_tipo() que não recebe parâmetros e que: [EXIGÊNCIA DE CÓDIGO 2 de 7];
+a.	Pergunta o tipo de madeira desejado;
+b.	Retorna o VALOR do tipo de madeira com base na escolha do usuário (use return);
+c.	Repete a pergunta do item B.a se digitar uma opção diferente de: PIN/PER/MOG/IPE/IMB;
+C.	Deve-se implementar a função qtd_toras() que não recebe parâmetros e que: [EXIGÊNCIA DE CÓDIGO 3 de 7];
+a.	Pergunta a quantidade de toras;
+b.	Retorna (use return) a quantidade de toras E o valor do desconto (os dois valores) seguindo a regra do enunciado;
+c.	Repete a pergunta do item C.a se digitar um valor acima de 2000 ou valor não numérico (use try/except para não numérico)
+D.	Deve-se implementar a função transporte() que não recebe parâmetros e que: [EXIGÊNCIA DE CÓDIGO 4 de 7];
+a.	Pergunta pelo serviço adicional de transporte;
+b.	Retorna (use return) o valor de apenas uma das opções de transporte;
+c.	Repetir a pergunta item D.a se digitar uma opção diferente de: 1/2/3;
+E.	Deve-se implementar o total a pagar no código principal (main), ou seja, não pode estar dentro de função, conforme o enunciado [EXIGÊNCIA DE CÓDIGO 5 de 7];
+F.	Deve-se implementar try/except [EXIGÊNCIA DE CÓDIGO 6 de 7];
+G.	Deve-se inserir comentários relevantes no código [EXIGÊNCIA DE CÓDIGO 7 de 7];
+H.	Deve-se apresentar na saída de console uma mensagem com o seu nome completo [EXIGÊNCIA DE SAÍDA DE CONSOLE 1 de 4];
+I.	Deve-se apresentar na saída de console um pedido no qual o usuário errou a opção de tipo de madeira [EXIGÊNCIA DE SAÍDA DE CONSOLE 2 de 4];
+J.	Deve-se apresentar na saída de console um pedido no qual o usuário digitou um valor que ultrapasse a quantidade máxima de toras aceitas (2000) [EXIGÊNCIA DE SAÍDA DE CONSOLE 3 de 4];
+K.	Deve-se apresentar na saída de console um pedido com opção de tipo de madeira, quantidade de toras e transporte válidos [EXIGÊNCIA DE SAÍDA DE CONSOLE 4 de 4];
+
+
+
+Apresentação de Código da Questão 3:
+print('Kelvyn William')
+# Menu com tipos de madeiras para o cliente
+print('-' * 9, 'Madereira', '-' * 9)
+print('• Tora de Pinho (PIN): 150.40 R$')
+print('• Tora de Peroba (PER): 170.20 R$')
+print('• Tora de Mogno (MOG): 190.90 R$')
+print('• Tora de Ipê (IPE): 210.10 R$')
+print('• Tora de Imbuia (IMB): 220.70 R$')
+
+# função com escolha da madeira pelo cliente
+def escolha_tipo():
+    while True:
+        madeira = input('Qual tipo de madeira você deseja? (PIN, PER, MOG, IPE, IMB): ').strip().upper()
+        if madeira in ('PIN', 'PER', 'MOG', 'IPE', 'IMB'):
+            return madeira
+        else:
+            print('Madeira inválida. Tente novamente.')
+            
+# função com quantidade de madeira desejada pelo cliente e desconto 
+def qtd_toras():
+    while True:
+        qtd = int(input('Qual quantidade de madeira desejada? (0-2000): '))
+        if qtd <= 0:
+            print('Quantidade inválida. Tente novamente.')
+        elif qtd < 100:
+            return qtd, 0
+        elif qtd >= 100 and qtd < 500:
+            return qtd, 4
+        elif qtd >= 500 and qtd < 1000:
+            return qtd, 9
+        elif qtd >= 1000 and qtd <= 2000:
+            return qtd, 16
+        else:
+            print('Não é aceito pedidos com essa quantidade de toras.')
+
+# função para escolha do transporte do cliente
+def transporte():
+    while True:
+        print('Escolha o serviço adicional de transporte:')
+        print('1. Transporte rodoviário (1000 R$)')
+        print('2. Transporte ferroviário (2000 R$)')
+        print('3. Transporte hidroviário (2500 R$)')
+        trans = input('Digite o número do transporte desejado: ')
+        if trans == '1':
+            return 1000
+        elif trans == '2':
+            return 2000
+        elif trans == '3':
+            return 2500
+        else:
+            print('Transporte inválido, tente novamente.')
+
+while True:
+    madeira = escolha_tipo()
+    quantidade, desconto = qtd_toras()
+    frete = transporte()
+
+    # Definindo o preço da madeira selecionada
+    if madeira == 'PIN':
+        valor_madeira = 150.40
+    elif madeira == 'PER':
+        valor_madeira = 170.20
+    elif madeira == 'MOG':
+        valor_madeira = 190.90
+    elif madeira == 'IPE':
+        valor_madeira = 210.10
+    elif madeira == 'IMB':
+        valor_madeira = 220.70
+
+    # Calculando o total com desconto e frete
+    total = (valor_madeira * quantidade) * (1 - desconto / 100) + frete
+    print(f'Total a pagar é: R$ {total:.2f}')
+
+    # Perguntar se deseja realizar outro pedido
+    outro_pedido = input('Deseja realizar outro pedido? (S/N): ').strip().upper()
+    if outro_pedido != 'S':
+        break
+
+
+Apresentação de Saída do Console da Questão 3:
+
+Kelvyn William 
+--------- Madereira ---------
+• Tora de Pinho (PIN): 150.40 R$
+• Tora de Peroba (PER): 170.20 R$
+• Tora de Mogno (MOG): 190.90 R$
+• Tora de Ipê (IPE): 210.10 R$
+• Tora de Imbuia (IMB): 220.70 R$
+Qual tipo de madeira você deseja? (PIN, PER, MOG, IPE, IMB): eng
+Madeira inválida. Tente novamente.
+Qual tipo de madeira você deseja? (PIN, PER, MOG, IPE, IMB): pin
+Qual quantidade de madeira desejada? (0-2000): 2500
+Não é aceito pedidos com essa quantidade de toras.
+Qual quantidade de madeira desejada? (0-2000): 2000
+Escolha o serviço adicional de transporte:
+1. Transporte rodoviário (1000 R$)
+2. Transporte ferroviário (2000 R$)
+3. Transporte hidroviário (2500 R$)
+Digite o número do transporte desejado: 4
+Transporte inválido, tente novamente.
+Escolha o serviço adicional de transporte:
+1. Transporte rodoviário (1000 R$)
+2. Transporte ferroviário (2000 R$)
+3. Transporte hidroviário (2500 R$)
+Digite o número do transporte desejado: 1
+Total a pagar é: R$ 253672.00
+Deseja realizar outro pedido? (S/N): n
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+QUESTÃO 4 de 4 - Conteúdo até aula 06
+Enunciado: Você e sua equipe de programadores foram contratados por uma pequena empresa para desenvolver um software de gerenciamento de Contatos Comerciais. Este software deve ter o seguinte menu e opções:
+
+1)	Cadastrar Contato
+2)	Consultar Contato
+1.	Consultar Todos 
+2.	Consultar por Id
+3.	Consultar por Atividade
+4.	Retornar ao menu
+3)	Remover Contato
+4)	Encerrar Programa
+
+Elabore um programa em Python que: 
+A.	Deve-se implementar o print com o seu nome completo (somente print, não usar input aqui). 
+Por exemplo: print(“Bem vindos a lista de contatos do Bruno Kostiuk”)  [EXIGÊNCIA DE CÓDIGO 1 de 8];
+B.	Deve-se implementar uma lista com o nome de lista_contatos e a variável id_global com valor inicial igual ao número de seu RU [EXIGÊNCIA DE CÓDIGO 2 de 8];
+C.	Deve-se implementar uma função chamada cadastrar_contato(id) que recebe apenas id como parâmetro e que: [EXIGÊNCIA DE CÓDIGO 3 de 8];
+a.	Pergunta nome, atividade, telefone do contato;
+b.	Armazena o id (este é fornecido via parâmetro da função), nome, atividade, telefone dentro de um dicionário;
+c.	Copiar o dicionário para dentro da lista_contatos (utilizar o copy);
+D.	Deve-se implementar uma função chamada consultar_contatos() que não recebe parâmetros e que: [EXIGÊNCIA DE CÓDIGO 4 de 8];
+a.	Deve-se perguntar qual opção deseja (1. Consultar Todos / 2. Consultar por Id / 3. Consultar por Setor / 4. Retornar ao menu):
+i.	Se Consultar Todos, apresentar todos os contatos com todos os seus dados cadastrados;
+ii.	Se Consultar por Id, solicitar ao usuário que informe um id, e apresentar o contato específico (apenas 1) com todos os seus dados cadastrados;
+iii.	Se Consultar por Atividade, solicitar ao usuário que informe a atividade, e apresentar o(s) contato(s) que exercem aquela atividade com todos os seus dados cadastrados;
+iv.	Se Retornar ao menu, deve-se retornar ao menu principal (return);
+v.	Se Entrar com um valor diferente de 1, 2, 3 ou 4, printar “Opção inválida" e repetir a pergunta D.a.
+vi.	Enquanto o usuário não escolher a opção 4, o menu consultar contatos deve se repetir.
+E.	Deve-se implementar uma função chamada remover_contato() em que: [EXIGÊNCIA DE CÓDIGO 5 de 8];
+a.	Deve-se pergunta pelo id do contato a ser removido;
+b.	Remover o contato da lista_contatos;
+c.	Se o id fornecido não for de um contato da lista, printar “Id inválido” e repetir a pergunta E.a.
+F.	Deve-se implementar uma estrutura de menu no código principal (main), ou seja, não pode estar dentro de função, em que: [EXIGÊNCIA DE CÓDIGO 6 de 8];
+a.	Deve-se pergunta qual opção deseja (1. Cadastrar Contato / 2. Consultar Contato / 3. Remover Contato / 4. Encerrar Programa):
+i.	Se Cadastrar Contato, incrementar em um id_ global e em seguida, chamar a função cadastrar_contato (id_ global);
+ii.	Se Consultar Contato, chamar função consultar_contato ();
+iii.	Se Remover Contato, chamar função remover_ contato ();
+iv.	Se Encerrar Programa, sair do menu (e com isso acabar a execução do código);
+v.	Se Entrar com um valor diferente de 1, 2, 3 ou 4, printar “Opção inválida" e repetir a pergunta F.a.
+vi.	Enquanto o usuário não escolher a opção 4, o menu deve se repetir.
+G.	Deve-se implementar uma lista de dicionários (uma lista contento dicionários dentro) [EXIGÊNCIA DE CÓDIGO 7 de 8];
+H.	Deve-se inserir comentários relevantes no código [EXIGÊNCIA DE CÓDIGO 8 de 8];
+I.	Deve-se apresentar na saída de console um cadastro do seu contato da seguinte forma: para nome informe seu nome completo (não usar apelidos ou abreviações), para atividade informar como estudante, e para telefone informe sua RU. [EXIGÊNCIA DE SAÍDA DE CONSOLE 1 de 6];
+J.	Deve-se apresentar na saída de console um cadastro de mais 2 contatos com mesmo tipo de atividade (por exemplo: marceneiro, padeiro, pintor, pedreiro) [EXIGÊNCIA DE SAÍDA DE CONSOLE 2 de 6];
+K.	Deve-se apresentar na saída de console uma consulta de todos os contatos [EXIGÊNCIA DE SAÍDA DE CONSOLE 3 de 6];
+L.	Deve-se apresentar na saída de console uma consulta por código (id) de um dos contados [EXIGÊNCIA DE SAÍDA DE CONSOLE 4 de 6];
+M.	Deve-se apresentar na saída de console uma consulta por atividade em que 2 contatos exerçam a mesma atividade [EXIGÊNCIA DE SAÍDA DE CONSOLE 5 de 6];
+N.	Deve-se apresentar na saída de console uma remoção de um dos contatos e em seguida de uma consulta de todos os contatos, provando que o contato foi removido [EXIGÊNCIA DE SAÍDA DE CONSOLE 6 de 6];
+
+
+
+
+Apresentação de Código da Questão 4:
+print('kelvyn william')
+lista_contatos = []
+id_global = xxxxxxx
+
+# Função para cadastrar contato
+def cadastrar_contato(id):
+    nome = input('Informe o nome do contato: ')
+    atividade = input('Informe a atividade do contato: ')
+    telefone = input('Informe o número de contato: ')  # Telefone como string
+
+    # Dicionário do contato
+    contato = {
+        'id': id,
+        'nome': nome,
+        'atividade': atividade,
+        'telefone': telefone
+    }
+
+    # Cópia do dicionário para lista_contatos
+    lista_contatos.append(contato.copy())
+
+# Função para consultar contatos
+def consultar_contatos():
+    print('\n1. Consultar Todos\n2. Consultar por Id\n3. Consultar por Atividade\n4. Retornar ao menu')
+    escolha = input('Escolha uma opção: ')
+
+    # Consultar todos
+    if escolha == '1':
+        if lista_contatos:
+            for contato in lista_contatos:
+                print(contato)
+        else:
+            print('Nenhum contato encontrado!')
+
+    # Consultar por Id
+    elif escolha == '2':
+        id = int(input('Informe o id do contato: '))
+        contato_encontrado = next((contato for contato in lista_contatos if contato['id'] == id), None)
+        if contato_encontrado:
+            print(contato_encontrado)
+        else:
+            print('Contato não foi encontrado!')
+
+    # Consultar por Atividade
+    elif escolha == '3':
+        atividade = input('Informe a atividade: ')
+        contatos_encontrados = [contato for contato in lista_contatos if contato['atividade'] == atividade]
+        if contatos_encontrados:
+            for contato in contatos_encontrados:
+                print(contato)
+        else:
+            print('Nenhum contato encontrado com essa atividade.')
+
+    # Voltar ao menu
+    elif escolha == '4':
+        return
+    else:
+        print('Opção inválida. Tente novamente.')
+
+# Função para remover contato
+def remover_contato():
+    while True:
+        id = int(input('Informe o id do contato a ser removido: '))
+        for contato in lista_contatos:
+            if contato['id'] == id:
+                lista_contatos.remove(contato)
+                print('Contato removido com sucesso.')
+                return
+        print('Id inválido. Tente novamente.')
+
+# Menu principal
+while True:
+    print('\n1. Cadastrar Contato\n2. Consultar Contato\n3. Remover Contato\n4. Encerrar Programa')
+    opcao = input('Escolha uma opção: ')
+
+    # Cadastrar o Contato
+    if opcao == '1':
+        id_global += 1
+        cadastrar_contato(id_global)
+
+    # Consultar o Contato
+    elif opcao == '2':
+        consultar_contatos()
+
+    # Remover o Contato
+    elif opcao == '3':
+        remover_contato()
+
+    # Encerrar o Programa
+    elif opcao == '4':
+        print('Encerrando o programa...')
+        break
+
+    else:
+        print('Opção inválida. Tente novamente.')
+
+kelvyn william
+
+1. Cadastrar Contato
+2. Consultar Contato
+3. Remover Contato
+4. Encerrar Programa
+Escolha uma opção: 1
+Informe o nome do contato: kelvyn william 
+Informe a atividade do contato: estudante
+Informe o número de contato: xxxxxx
+
+1. Cadastrar Contato
+2. Consultar Contato
+3. Remover Contato
+4. Encerrar Programa
+Escolha uma opção: 1
+Informe o nome do contato: marcos silva
+Informe a atividade do contato: professor
+Informe o número de contato: 998732892
+
+1. Cadastrar Contato
+2. Consultar Contato
+3. Remover Contato
+4. Encerrar Programa
+Escolha uma opção: 1
+Informe o nome do contato: sonia rodrigues
+Informe a atividade do contato: limpeza
+Informe o número de contato: 992883728
+
+1. Cadastrar Contato
+2. Consultar Contato
+3. Remover Contato
+4. Encerrar Programa
+Escolha uma opção: 1
+Informe o nome do contato: antonio jose
+Informe a atividade do contato: professor
+Informe o número de contato: 929838918
+
+1. Cadastrar Contato
+2. Consultar Contato
+3. Remover Contato
+4. Encerrar Programa
+Escolha uma opção: 2
+
+1. Consultar Todos
+2. Consultar por Id
+3. Consultar por Atividade
+4. Retornar ao menu
+Escolha uma opção: 1
+{'id': xxxxxxx, 'nome': 'kelvyn william ', 'atividade': 'estudante', 'telefone': 'xxxxxx'}
+{'id': xxxxxxx, 'nome': 'marcos silva', 'atividade': 'professor', 'telefone': '998732892'}
+{'id': xxxxxxx, 'nome': 'sonia rodrigues', 'atividade': 'limpeza', 'telefone': '992883728'}
+{'id': xxxxxxx, 'nome': 'antonio jose', 'atividade': 'professor', 'telefone': '929838918'}
+
+1. Cadastrar Contato
+2. Consultar Contato
+3. Remover Contato
+4. Encerrar Programa
+
+
